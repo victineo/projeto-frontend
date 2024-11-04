@@ -7,10 +7,18 @@
     min-width: 8rem;
 }
 
+.inputWrapper {
+    display: flex;
+    flex-direction: row;
+    /* gap: 1rem; */
+    position: relative;
+    width: 100%;
+}
+
 .inputField {
     width: 100%;
     min-height: 3rem;
-    padding: 0.75rem;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
     border-radius: 0.5rem;
     border: 1px solid transparent;
     box-sizing: border-box;
@@ -26,4 +34,12 @@
 .inputField:focus-visible {
     outline: 2px auto white;
     transition: ease-out 0.15s;
+}
+
+.icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
 }

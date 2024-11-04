@@ -7,14 +7,15 @@ import { MagnifyingGlass } from "phosphor-react";
 export function Header() {
   return (
     <header>
-      <div>
-        <img src={Logo} alt="Logo" />
-        <h1>To-do list</h1>
-      </div>
-      <NavBar />
-      <InputField 
-        placeholder="Adicione uma nova tarefa"
-        />
+        <div>
+            <img src={Logo} alt="Logo" />
+            <h1>To-do list</h1>
+        </div>
+            <NavBar />
+            <InputField 
+                placeholder="Adicione uma nova tarefa"
+                icon={<MagnifyingGlass size={24} />}
+            />
     </header>
   );
 }
