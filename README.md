@@ -21,7 +21,12 @@ ou
 npm i
 ```
 
-E para executar o projeto, execute o comando:
+Instale o React Router com:
+```
+npm install react-router-dom
+```
+
+E, para executar o projeto, execute:
 ```
 npm run dev
 ```
