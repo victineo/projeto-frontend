@@ -1,0 +1,69 @@
+:root {
+  --white: #fff;
+  --gray-100: #e1e1e6;
+  --gray-300: #c4c4cc;
+  --gray-400: #8d8d99;
+  --gray-600: #323238;
+  --gray-700: #29292e;
+  --gray-800: #202024;
+  --gray-900: #121214;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--gray-900);
+  color: var(--gray-300);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.allContent {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  padding: 2rem;
+
+  gap: 1rem;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+.createTaskButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  line-height: 1.6;
+
+  background-color: hsl(218, 70%, 50%);
+  color: var(--white);
+  border: 0;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+
+  transition: ease-out 0.15s;
+}
+.createTaskButton:hover {
+  background-color: hsl(217, 91%, 60%);
+  
+  transition: ease-out 0.15s;
+}
