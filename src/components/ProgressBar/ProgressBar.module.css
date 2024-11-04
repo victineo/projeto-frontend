@@ -1,0 +1,26 @@
+.progressContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 12px;
+    color: #e1e1e6;
+    margin: 10px 0;
+}
+
+.progressBarContainer {
+    width: 100%;
+    height: 15px;
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progressBarFill {
+    height: 100%;
+    background-color: #7dd3fc;
+    width: 50%;
+    transition: width 0.3s ease;
+}

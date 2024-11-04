@@ -1,0 +1,27 @@
+/* src/navbar.module.css */
+nav {
+    background-color: #1f1f23;
+    padding: 15px 30px;
+    border-radius: 8px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+li:hover {
+    color: #7dd3fc;
+}
