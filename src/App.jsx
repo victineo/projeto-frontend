@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './global.css'
-import { Header } from './components/Header/Header'
+import { Aside } from './components/Aside/Aside'
 import { Task } from './components/Task/Task'
 import { Plus } from 'phosphor-react'
 import { ProgressBar } from './components/ProgressBar/ProgressBar'
@@ -8,9 +8,8 @@ import { ProgressBar } from './components/ProgressBar/ProgressBar'
 function App() {
   return (
     <>
-      <Header />
-      <div className='allContent'>
-        < ProgressBar />
+      <Aside />
+      <div className='container'>
         <button className='createTaskButton'> <Plus size={24} />Criar nova tarefa</button>
         <div className='taskList'>
           <Task />
@@ -19,7 +18,7 @@ function App() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default App
