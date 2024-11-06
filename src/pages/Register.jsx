@@ -1,5 +1,7 @@
-const Register = () => {};
-
-
-
-export default Register
+export function Register() {
+    return (
+        <div>
+            <h1>Register</h1>
+        </div>
+    );
+}

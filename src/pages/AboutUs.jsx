@@ -1,5 +1,7 @@
-const AboutUs = () => {};
-
-
-
-export default AboutUs
+export function AboutUs() {
+    return (
+        <div>
+            <h1>about us</h1>
+        </div>
+    );
+}

@@ -1,5 +1,7 @@
-const Subscriptions = () => {};
-
-
-
-export default Subscriptions
+export function Subscriptions() {
+    return (
+        <div className="subscriptions">
+            <h1>Subscriptions</h1>
+        </div>
+    );
+}
