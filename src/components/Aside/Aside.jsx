@@ -4,6 +4,7 @@ import Logo from "../../assets/check-fat-fill.svg";
 import { InputField } from "../InputField/InputField.jsx";
 import { ProgressBar } from "../ProgressBar/ProgressBar.jsx";
 import { MagnifyingGlass } from "phosphor-react";
+import { SignBar } from "../SignBar/SignBar.jsx"
 
 export function Aside() {
   return (
@@ -12,11 +13,13 @@ export function Aside() {
         <img className={styles.logo} src={Logo} alt="Logo" />
         <h1>To-do list</h1>
       </div>
-      <ProgressBar />
       <InputField
-        placeholder="Adicione uma nova tarefa"
+        placeholder="Pesquisar tarefa"
         icon={<MagnifyingGlass size={24} />}
       />
+      <NavBar />
+      <ProgressBar />
+      <SignBar />
     </aside>
   );
 }

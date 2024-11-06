@@ -7,9 +7,9 @@ nav {
 
 ul {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 30px;
-    list-style-type: none;
+    gap: 2rem;
     margin: 0;
     padding: 0;
 }
@@ -19,6 +19,7 @@ li {
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
+    display: flex;
     transition: color 0.3s ease;
 }
 

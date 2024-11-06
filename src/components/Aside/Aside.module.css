@@ -4,7 +4,7 @@ aside {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width:25%;
+    min-width:20%;
     /*max-width: 56rem;*/
     padding: 1rem;
     background-color: #1c1c1f;
