@@ -9,14 +9,16 @@ import { SignBar } from "../SignBar/SignBar.jsx"
 export function Aside() {
   return (
     <aside>
-      <div className={styles.logoContainer}>
-        <img className={styles.logo} src={Logo} alt="Logo" />
-        <h1>To-do list</h1>
+      <div className={styles.top}>
+        <div className={styles.logoContainer}>
+          <img className={styles.logo} src={Logo} alt="Logo" />
+          <h1>To-do list</h1>
+        </div>
+        <InputField
+          placeholder="Pesquisar tarefa"
+          icon={<MagnifyingGlass size={24} />}
+        />
       </div>
-      <InputField
-        placeholder="Pesquisar tarefa"
-        icon={<MagnifyingGlass size={24} />}
-      />
       <NavBar />
       <ProgressBar />
       <SignBar />
