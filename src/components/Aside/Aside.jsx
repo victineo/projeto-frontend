@@ -1,11 +1,11 @@
-import styles from "./Header.module.css";
+import styles from "./Aside.module.css";
 import { NavBar } from "../NavBar/NavBar.jsx";
 import Logo from "../../assets/check-fat-fill.svg";
 import { InputField } from "../InputField/InputField.jsx";
 import { ProgressBar } from "../ProgressBar/ProgressBar.jsx";
 import { MagnifyingGlass } from "phosphor-react";
 
-export function Header() {
+export function Aside() {
   return (
     <aside>
       <div className={styles.logoContainer}>
