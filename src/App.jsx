@@ -1,25 +1,25 @@
-import { useState } from 'react'
-import './global.css'
-import { Aside } from './components/Aside/Aside'
-import { Task } from './components/Task/Task'
-import { Plus } from 'phosphor-react'
-import { ProgressBar } from './components/ProgressBar/ProgressBar'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HomePage } from "./pages/Homepage";
+import { AboutUs } from "./pages/AboutUs";
+import { Help } from "./pages/Help";
+import { LoginPage } from "./pages/LoginPage";
+import { Register } from "./pages/Register";
+import { Subscriptions } from "./pages/Subscriptions";
+import { NoPage } from "./pages/NoPage";
 
 function App() {
   return (
-    <>
-    
-      <Aside />
-      <div className='container'>
-        <button className='createTaskButton'> <Plus size={24} />Criar nova tarefa</button>
-        <div className='taskList'>
-          <Task />
-          <Task />
-          <Task />
-        </div>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/help" element={<Help />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/subscriptions" element={<Subscriptions />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
