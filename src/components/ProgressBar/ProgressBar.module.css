@@ -19,8 +19,6 @@
 }
 
 .progressBarFill {
-    height: 100%;
     background-color: #7dd3fc;
-    width: 50%;
-    transition: width 0.3s ease;
+    transition: 0.15s ease;
 }

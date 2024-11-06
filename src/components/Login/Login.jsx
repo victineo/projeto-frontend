@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaUser, FaLock } from "react-icons/fa";
+// import { FaUser, FaLock } from "phosphor-react";
 import styles from "./Login.module.css";
 
 export function Login () {
@@ -17,7 +17,7 @@ export function Login () {
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <h1>Acesse o sistema</h1>
-        <div className={styles.input-field}>
+        <div className={styles.inputField}>
           <input
             type="text"
             placeholder="E-mail"
@@ -27,7 +27,7 @@ export function Login () {
           />
           <FaUser className={styles.icon} />
         </div>
-        <div className={st.input-field}>
+        <div className={styles.inputField}>
           <input
             type="password"
             placeholder="Senha"
