@@ -8,10 +8,12 @@ export function Task({ task, onDelete }) {
                 <CheckCircle size={24}/>
             </div>
             <div className={styles.taskInfo}>
-                <body className={styles.taskTitle}>Tarefa{task}</body>
-                <body className={styles.taskDescription}>
+                <div className={styles.taskTitle}>
+                    Tarefa{task}
+                </div>
+                <div className={styles.taskDescription}>
                     Descrição breve
-                </body>
+                </div>
             </div>
         </div>
     );
