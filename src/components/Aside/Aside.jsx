@@ -20,7 +20,7 @@ export function Aside() {
           icon={<MagnifyingGlass size={24} />}
         />
       </div>
-      <NavBar />
+      <NavBar orientation="vertical" />
       <ProgressBar />
       <SignBar />
     </aside>
