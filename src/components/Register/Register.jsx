@@ -3,7 +3,7 @@ import styles from "./Register.module.css";
 export function Register() {
   return (
     <div className={styles.container}>
-      <form>
+      <form className={styles.registerForm}>
         <h1>Registro</h1>
         <div className={styles.inputField}>
             <input 
