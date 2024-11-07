@@ -5,30 +5,30 @@ export function Register() {
     <div className={styles.container}>
       <form>
         <h1>Registro</h1>
-        <div class name={styles.input-field}>
+        <div className={styles.inputField}>
             <input 
                 type="text" 
                 placeholder="Nome"
                 required
             />
         </div>
-        <div className={styles.input-field}>
+        <div className={styles.inputField}>
             <input 
                 type="text"   
                 placeholder="Email"
                 required
             />
         </div>
-        <div className={styles.input-field}>
+        <div className={styles.inputField}>
             <input 
                 type="text"   
                 placeholder="Senha"
                 required
             />
         </div>
-        <button type="submit">Registrar</button>
-        <div className={styles.login-link}>
-            <p>Já possui uma conta? <a href="#">Login</a></p>
+        <button className={styles.signInButton} type="submit">Registrar-se</button>
+        <div className={styles.loginLink}>
+            <p>Ja possui uma conta? <a href="#">Login</a></p>
         </div>
       </form>
     </div>
