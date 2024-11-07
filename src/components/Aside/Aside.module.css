@@ -15,7 +15,13 @@ aside {
 .top {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
+}
+
+.searchField {
+    display: flex;
+    width: 100%;
 }
 
 .logoContainer {

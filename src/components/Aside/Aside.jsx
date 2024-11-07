@@ -15,6 +15,7 @@ export function Aside() {
           <h1>To-do list</h1>
         </div>
         <InputField
+          className={styles.searchField}
           placeholder="Pesquisar tarefa"
           icon={<MagnifyingGlass size={24} />}
         />
