@@ -4,7 +4,7 @@ import styles from "./Login.module.css";
 export function Login () {
   return (
     <div className={styles.container}>
-      <form>
+      <form className={styles.loginForm}>
         <h1>Faça login</h1>
         <div className={styles.inputField}>
           <input
