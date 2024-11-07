@@ -1,12 +1,20 @@
+.container a {
+    width: 100%;
+}
+
 .signButton {
-    background-color: #1f1f23; /* Cor de fundo inicial */
-    color: #ffffff; /* Cor do texto */
-    border: none; /* Remove bordas */
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Negrito para dar destaque */
-    transition: background-color 0.3s ease /* Animações */
+    background-color: #1f1f23;
+    color: #ffffff;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+    width: 100%;
+    height: fit-content;
+    padding: 0.75rem 1rem;
 }
 
 .signButton:hover {
-    background-color: #1e40af; /* Azul escuro ao passar o mouse */
+    background-color: #1e40af;
 }

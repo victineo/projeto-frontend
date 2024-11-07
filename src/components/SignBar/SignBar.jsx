@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export function SignBar() {
   return (
-    <div>
+    <div className={styles.container}>
       <Link to={"/login"}>
         <button className={styles.signButton}>Login</button>
       </Link>
