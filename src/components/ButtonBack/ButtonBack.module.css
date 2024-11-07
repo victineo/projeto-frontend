@@ -1,0 +1,13 @@
+.backButton {
+    display: flex;
+    flex-direction: row;
+
+    gap: 1rem;
+
+    padding: 0.5rem 0.75rem;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    height: fit-content;
+}
