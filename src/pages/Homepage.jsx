@@ -6,11 +6,25 @@ import { ProgressBar } from "../components/ProgressBar/ProgressBar";
 import { Plus } from "phosphor-react";
 
 export function HomePage() {
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState("");
+
+  function handleCreateNewTask(event) {
+    event.preventDefault();
+
+    const task = {
+      id: Date.now(),
+      title: newTask,
+      completed: false,
+    };
+    setTasks([...tasks, task]);
+    setNewTask("");
+  }
   return (
     <>
       <Aside />
       <div className="container">
-        <button className="createTaskButton">
+        <button className="createTaskButton" onClick={handleCreateNewTask}>
           <Plus size={24} />
           Criar nova tarefa
         </button>
