@@ -24,6 +24,13 @@ aside {
     align-items: center;
     gap: 1rem;
 }
+.logoContainer a {
+    display: inherit;
+    flex-direction: inherit;
+    align-items: inherit;
+    gap: inherit;
+    text-decoration: none;
+}
 
 .logo {
     width: 3rem;
@@ -45,5 +52,4 @@ aside div h1 {
     line-height: 1.2;
     font-size: 2rem;
     color: var(--white);
-    margin: 0;
 }

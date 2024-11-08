@@ -1,6 +1,5 @@
 .headerContainer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background-color: #1f1f23;
@@ -8,8 +7,17 @@
 
 .logoContainer {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 0.5rem;
+}
+
+.logoContainer a {
+    display: inherit;
+    flex-direction: inherit;
+    align-items: inherit;
+    gap: inherit;
+    text-decoration: none;
 }
 
 .logo {
@@ -17,8 +25,8 @@
     height: 40px;
 }
 
-h1 {
-    color: white;
+header div h1 {
+    color: var(--white);
     margin: 0;
     font-size: 1.5rem;
 }
