@@ -2,8 +2,7 @@ import { useState } from "react";
 import "../global.css";
 import { Aside } from "../components/Aside/Aside";
 import { Task } from "../components/Task/Task";
-import { ProgressBar } from "../components/ProgressBar/ProgressBar";
-import { Plus } from "phosphor-react";
+import { NewTask } from "../components/NewTask/NewTask";
 
 export function HomePage() {
   const [tasks, setTasks] = useState([]);
@@ -24,10 +23,7 @@ export function HomePage() {
     <>
       <Aside />
       <div className="container">
-        <button className="createTaskButton" onClick={handleCreateNewTask}>
-          <Plus size={24} />
-          Criar nova tarefa
-        </button>
+        <NewTask />
         <div className="taskList">
           <Task />
           <Task />
