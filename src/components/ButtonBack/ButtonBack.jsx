@@ -4,11 +4,12 @@ import { Link } from "react-router-dom"
 
 export function ButtonBack() {
   return (
-    <button className={styles.backButton}>
-        <Link to="/">
+    <Link to="/" className={styles.backButtonLink}>
+      <button className={styles.backButton}>
+        
             <ArrowLeft size={24} />
             Voltar
-        </Link>
-    </button>
+      </button>
+    </Link>
   )
 }
