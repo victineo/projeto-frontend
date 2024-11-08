@@ -7,10 +7,13 @@
 }
 
 .registerForm {
+    display: flex;
+    flex-direction: column;
     background-color: #1f1f1f;
-    padding: 30px;
+    padding: 2rem;
+    gap: 1rem;
     border-radius: 8px;
-    max-width: 400px;
+    max-width: 25rem;
     min-width: 30rem;
     width: 100%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -18,20 +21,18 @@
     color: #e1e1e6;
 }
 
-h1 {
+.formTitle {
     font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #7dd3fc;
+    color: var(--blue-600);
 }
 
 .inputField {
-    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
 
 .inputField input {
-    padding: 10px;
+    padding: 0.75rem;
     border-radius: 8px;
     border: 1px solid #333;
     background-color: #2c2c2c;
@@ -47,8 +48,7 @@ h1 {
 
 .signInButton {
     width: 100%;
-    padding: 10px;
-    margin-top: 15px;
+    padding: 0.75rem;
     background-color: #7dd3fc;
     color: #121214;
     border: none;
