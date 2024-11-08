@@ -7,7 +7,7 @@ import { ButtonBack } from "../components/ButtonBack/ButtonBack";
 
 export function LoginPage() {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <Header />
             <ButtonBack />
             <div className={styles.loginPage}>
