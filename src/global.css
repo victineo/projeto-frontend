@@ -29,6 +29,10 @@ html, #root {
   min-height: 100vh;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
+
 body {
   background-color: var(--gray-900);
   color: var(--gray-300);
