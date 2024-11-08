@@ -9,7 +9,6 @@ export function LoginPage() {
     return (
         <div className={styles.wrapper}>
             <Header />
-            <ButtonBack />
             <div className={styles.loginPage}>
                 <Login />
             </div>

@@ -1,10 +1,13 @@
 import React from "react";
 import { Check } from "phosphor-react";
 import styles from "./Subscriptions.module.css";
+import { Header } from "../components/Header/Header"
 
 export function Subscriptions() {
   return (
     <div className={styles.subscriptions}>
+
+      <Header />
       <h1 className={styles.title}>Escolha um plano ideal para você</h1>
       <div className={styles.plans}>
         <div className={styles.plan}>

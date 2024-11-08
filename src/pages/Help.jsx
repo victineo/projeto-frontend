@@ -1,8 +1,11 @@
 import styles from "./Help.module.css";
+import { Header } from "../components/Header/Header"
+
 
 export function Help() {
   return (
     <div className={styles.helpContainer}>
+      <Header />
       <h1 className={styles.helpTitle}>Como podemos ajudar?</h1>
       <p className={styles.sectionContent}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus animi ex exercitationem cum. Vitae commodi repellendus officia ea voluptatibus cum similique deleniti, maiores optio necessitatibus quibusdam molestias suscipit, eum quos!
