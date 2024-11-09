@@ -11,7 +11,7 @@ export function Task({ task, onDelete }) {
     };
 
     return (
-        <div className={styles.taskCard}>
+        <div className={`${styles.taskCard} ${isCompleted ? styles.completed : ''}`}>
             <div className={`${styles.checkBox} ${isCompleted ? styles.checked : ''}`} onClick={handleCheckboxClick}>
                 {isCompleted ? <CheckCircle size={24} weight="fill" /> : <Circle size={24} />}
             </div>

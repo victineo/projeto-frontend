@@ -16,11 +16,14 @@
 
     transition: ease-out 0.15s;
 }
-
 .taskCard:hover {
     background-color: var(--gray-700);
 
     transition: ease-out 0.15s;
+}
+.taskCard.completed {
+    text-decoration: line-through;
+    color: var(--gray-400);
 }
 
 .checkBox {
