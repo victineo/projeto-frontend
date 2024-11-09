@@ -31,6 +31,17 @@
     min-width: 1rem;
     min-height: 1rem;
 }
+.checkBox svg {
+    cursor: pointer;
+
+    transition: color ease-out 0.15s;
+}
+.checkBox svg:hover {
+    color: var(--blue-500);
+}
+.checkBox.checked svg {
+    color: var(--blue-500);
+}
 
 .taskInfo {
     display: flex;
