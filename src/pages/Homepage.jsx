@@ -4,17 +4,21 @@ import { Aside } from "../components/Aside/Aside";
 import { Task } from "../components/Task/Task";
 import { NewTask } from "../components/NewTask/NewTask";
 
+const tasks = [
+  { id: 1, title: "Estudar React", description: "Estudar conceitos de componentes, hooks e props", isCompleted: false },
+  { id: 2, title: "Criar um portfólio", description: "Criar um portfólio com React", isCompleted: false },
+];
+
 export function HomePage() {
-  const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
-  function handleCreateNewTask(event) {
+  function handleCreateNewTask() {
     event.preventDefault();
 
     const task = {
       id: Date.now(),
       title: newTask,
-      completed: false,
+      isCompleted: false,
     };
     setTasks([...tasks, task]);
     setNewTask("");
@@ -23,8 +27,19 @@ export function HomePage() {
     <>
       <Aside />
       <div className="container">
-        <NewTask />
+        <NewTask
+          onCreate={handleCreateNewTask}
+        />
         <div className="taskList">
+          {tasks.map(task => {
+            return (
+            <Task
+              key={task.id}
+              title={task.title}
+              description={task.description}
+            />
+            );
+          })}
           <Task />
           <Task />
           <Task />
