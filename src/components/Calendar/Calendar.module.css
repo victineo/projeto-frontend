@@ -13,6 +13,16 @@
   width: fit-content;
 }
 
+.calendarButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem 0.75rem;
+}
+
 .monthName {
   font-size: 1.25rem;
   color: var(--gray-100);
