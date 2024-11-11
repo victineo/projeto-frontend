@@ -3,7 +3,7 @@ import styles from './Task.module.css'
 import { Circle } from 'phosphor-react';
 import { CheckCircle } from 'phosphor-react';
 
-export function Task({ task, onDelete }) {
+export function Task({ title, description, onDelete }) {
     const [isCompleted, setIsCompleted] = useState(false);
 
     const handleCheckboxClick = () => {
@@ -17,10 +17,10 @@ export function Task({ task, onDelete }) {
             </div>
             <div className={styles.taskInfo}>
                 <div className={styles.taskTitle}>
-                    Tarefa{task}
+                    {title}
                 </div>
                 <div className={styles.taskDescription}>
-                    Descrição breve
+                    {description}
                 </div>
             </div>
         </div>
