@@ -6,10 +6,13 @@ export function NewTask({ onCreate }) {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
-    const handleCreateTask = (e) => {
-        e.preventDefault();
+    function handleCreateNewTask() {
+        event.preventDefault();
+
+        const newTitleText = event.target[0].value;
+        const newDescriptionText = event.target[1].value;
         if (title.trim()) {
-            onCreate({ title, description });
+            onCreate({ title: newTitleText, description: newDescriptionText });
             setTitle('');
             setDescription('');
         }
@@ -20,10 +23,8 @@ export function NewTask({ onCreate }) {
         e.target.style.height = `${e.target.scrollHeight}px`;
     };
 
-    // const isNewTaskTitleEmpty = newTaskTitle.length == 0;
-
     return (
-        <form className={styles.newTaskForm} onSubmit={handleCreateTask}>
+        <form className={styles.newTaskForm} onSubmit={handleCreateNewTask}>
             <div className={styles.newTaskContent}>
                 <div className={styles.checkBox}>
                     
@@ -35,6 +36,8 @@ export function NewTask({ onCreate }) {
                         placeholder="Título da tarefa"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
+                        onInvalid={(e) => e.target.setCustomValidity('A tarefa precisa ter um título!')}
+                        required
                     />
                     <textarea
                         className={styles.newTaskDescription}
