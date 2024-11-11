@@ -28,11 +28,12 @@
 
 .checkBox {
     display: flex;
-    align-content: center;
-    justify-content: center;
+    align-items: center;
 
-    min-width: 1rem;
-    min-height: 1rem;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+
+    height: 100%;
 }
 .checkBox svg {
     cursor: pointer;
@@ -49,6 +50,7 @@
 .taskInfo {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .taskTitle {
@@ -58,4 +60,20 @@
 .taskDescription {
     color: var(--gray-400);
     line-height: 1.6;
+}
+
+.removeButton {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.removeButton svg {
+    cursor: pointer;
+
+    transition: ease-out 0.15s;
+}
+.removeButton svg:hover {
+    color: red;
+
+    transition: ease-out 0.15s;
 }

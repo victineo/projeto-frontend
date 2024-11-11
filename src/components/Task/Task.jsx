@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './Task.module.css'
 import { Circle } from 'phosphor-react';
 import { CheckCircle } from 'phosphor-react';
+import { Trash } from 'phosphor-react';
 
 export function Task({ title, description, onDelete }) {
     const [isCompleted, setIsCompleted] = useState(false);
@@ -22,6 +23,9 @@ export function Task({ title, description, onDelete }) {
                 <div className={styles.taskDescription}>
                     {description}
                 </div>
+            </div>
+            <div className={styles.removeButton}>
+                <Trash size={24} onClick={onDelete} />
             </div>
         </div>
     );
