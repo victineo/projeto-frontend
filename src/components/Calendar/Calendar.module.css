@@ -1,78 +1,58 @@
-.fundo {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: 0.625rem;
-  padding: 0.625rem;
-  background-color: #fff;
-  border-radius: 0.625rem;
-  box-shadow: 0px 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.fundo h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  text-align: center;
-  font-weight: bold;
-}
-
-#tabela_calend {
+#calendar_table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
 }
 
-#tabela_calend td {
-  width: 14.28%;
-  height: 2.5rem;
-  text-align: center;
-  vertical-align: middle;
+.calendarContainer {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.monthName {
+  font-size: 1.25rem;
+  color: var(--gray-100);
+}
+
+.numberDayRowContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dayRow, .numberDayRow {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.dayRow td, .numberDayRow td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.625rem;
+  height: 2.625rem;
+}
+.dayRow td h3 {
   font-size: 1rem;
-  padding: 0.3125rem;
-  border: 0.0625rem solid #ddd;
-}
-
-#tabela_calend th {
-  padding: 0.625rem;
-  background-color: #f5f5f5;
-  font-weight: bold;
-}
-
-.dia {
-  background-color: #f0f0f0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.dia:hover {
-  background-color: #dcdcdc;
-}
-
-.vazio {
-  background-color: transparent;
-}
-
-.dayRow {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-}
-
-.dayRow td {
-  width: 2rem;
-}
-
-.numberDayRow {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
+  color: var(--gray-400);
 }
 
 .numberDayRow td {
-  display: flex;
-  justify-content: center;
-  width: 2rem;
+  color: var(--gray-100);
+  border-radius: 999px;
+
+  transition: ease-out 0.15s;
+}
+.numberDayRow td:hover {
+  cursor: pointer;
+  background-color: var(--gray-800);
+
+  transition: ease-out 0.15s;
 }
 
 #tabela_calend td h3 {

@@ -73,26 +73,24 @@ export function Calendar() {
   };
 
   return (
-    <section className="fundo">
-      <div>
-        <h1>{mes}</h1>
-      </div>
-      <table id="tabela_calend">
+    <div className={styles.calendarContainer}>
+        <h1 className={styles.monthName}>{mes}</h1>
+      <table id="calendar_table">
         <thead>
           <tr className={styles.dayRow}>
-            <td><h3>Seg</h3></td>
-            <td><h3>Ter</h3></td>
-            <td><h3>Qua</h3></td>
-            <td><h3>Qui</h3></td>
-            <td><h3>Sex</h3></td>
-            <td><h3>Sab</h3></td>
-            <td><h3>Dom</h3></td>
+            <td><h3>S</h3></td>
+            <td><h3>T</h3></td>
+            <td><h3>Q</h3></td>
+            <td><h3>Q</h3></td>
+            <td><h3>S</h3></td>
+            <td><h3>S</h3></td>
+            <td><h3>D</h3></td>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.numberDayRowContainer}>
           {renderCalendario()}
         </tbody>
       </table>
-    </section>
+    </div>
   );
 };
