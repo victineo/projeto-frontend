@@ -44,7 +44,7 @@ export function NewTask({ onCreate }) {
                         onInput={(e) => autoResize(e)}
                     />
                 </div>
-                <button type="submit">Criar</button>
+                <button type="submit" disabled={title.trim() === ''}>Criar</button>
             </div>
         </form>
     );
