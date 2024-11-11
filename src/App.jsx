@@ -6,6 +6,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage";
 import { Subscriptions } from "./pages/Subscriptions";
 import { NoPage } from "./pages/NoPage";
+import "./global.css";
 
 function App() {
   return (
