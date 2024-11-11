@@ -3,6 +3,7 @@ import "../global.css";
 import { Aside } from "../components/Aside/Aside";
 import { Task } from "../components/Task/Task";
 import { NewTask } from "../components/NewTask/NewTask";
+import { Calendar } from "../components/Calendar/Calendar";
 
 export function HomePage() {
   const [tasks, setTasks] = useState([
@@ -57,6 +58,7 @@ export function HomePage() {
             );
           })}
         </div>
+        <Calendar />
       </div>
     </>
   );
