@@ -23,6 +23,22 @@ export function HomePage() {
       setTasks([...tasks, newTask]);
     }
   }
+
+  function handleDeleteTask(taskId) {
+    const updatedTasks = tasks.filter(task => task.id !== taskId);
+    setTasks(updatedTasks);
+  }
+  
+  const handleToggleCompleted = (taskId) => {
+    const updatedTasks = tasks.map(task => {
+      if (task.id === taskId) {
+        task.isCompleted = !task.isCompleted;
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+    console.log(updatedTasks);
+  }
   return (
     <>
       <Aside />
@@ -35,6 +51,8 @@ export function HomePage() {
               key={task.id}
               title={task.title}
               description={task.description}
+              onToggleCompleted={() => handleToggleCompleted(task.id)}
+              onDelete={() => handleDeleteTask(task.id)}
             />
             );
           })}
