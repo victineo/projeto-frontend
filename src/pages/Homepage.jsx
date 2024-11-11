@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "../global.css";
 import { Aside } from "../components/Aside/Aside";
 import { Task } from "../components/Task/Task";
 import { NewTask } from "../components/NewTask/NewTask";
 import { Calendar } from "../components/Calendar/Calendar";
+import styles from "./Homepage.module.css";
 
 export function HomePage() {
   const [tasks, setTasks] = useState([
@@ -53,9 +53,9 @@ export function HomePage() {
   return (
     <>
       <Aside />
-      <div className="container">
+      <div className={styles.centerColumn}>
         <NewTask onCreate={handleCreateNewTask} />
-        <div className="taskList">
+        <div className={styles.taskList}>
           {tasks.map(task => {
             return (
               <Task
@@ -72,6 +72,7 @@ export function HomePage() {
           <Calendar />
         </div>
       </div>
+      <div className={styles.rightColumn}></div>
     </>
   );
 }
