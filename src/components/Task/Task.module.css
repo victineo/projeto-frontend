@@ -73,7 +73,7 @@
     transition: ease-out 0.15s;
 }
 .removeButton svg:hover {
-    color: red;
+    color: var(--red-500);
 
     transition: ease-out 0.15s;
 }

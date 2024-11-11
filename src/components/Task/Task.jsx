@@ -4,11 +4,12 @@ import { Circle } from 'phosphor-react';
 import { CheckCircle } from 'phosphor-react';
 import { Trash } from 'phosphor-react';
 
-export function Task({ title, description, onDelete }) {
+export function Task({ title, description, onToggleCompleted, onDelete }) {
     const [isCompleted, setIsCompleted] = useState(false);
 
     const handleCheckboxClick = () => {
         setIsCompleted(!isCompleted);
+        onToggleCompleted(!isCompleted);
     };
 
     return (
