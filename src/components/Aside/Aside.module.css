@@ -6,8 +6,8 @@ aside {
     min-width:fit-content;
     /*max-width: 56rem;*/
     padding: 1rem;
-    background-color: #1c1c1f;
-    color: #ffffff;
+    background-color: var(--gray-800);
+    color: var(--white);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
