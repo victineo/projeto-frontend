@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styles from './Task.module.css'
-import { Circle } from 'phosphor-react';
+import { Circle, PencilCircle } from 'phosphor-react';
 import { CheckCircle } from 'phosphor-react';
-import { Trash } from 'phosphor-react';
+import { PencilSimple } from 'phosphor-react';
 
-export function Task({ title, description, onToggleCompleted, onDelete }) {
+export function Task({ title, description, onToggleCompleted, onToggleExpanded, onSelectTask, onDelete, isExpanded }) {
     const [isCompleted, setIsCompleted] = useState(false);
 
     const handleCheckboxClick = () => {
@@ -25,8 +25,11 @@ export function Task({ title, description, onToggleCompleted, onDelete }) {
                     {description}
                 </div>
             </div>
-            <div className={styles.removeButton}>
-                <Trash size={24} onClick={onDelete} />
+            <div className={styles.editButton}>
+                <PencilSimple size={24} onClick={() => {
+                    onToggleExpanded();
+                    onSelectTask({ title, description });
+                }} />
             </div>
         </div>
     );

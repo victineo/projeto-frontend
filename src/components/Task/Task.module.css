@@ -63,18 +63,18 @@
     line-height: 1.6;
 }
 
-.removeButton {
+.editButton {
     display: flex;
     align-items: center;
     height: 100%;
 }
-.removeButton svg {
+.editButton svg {
     cursor: pointer;
 
     transition: ease-out 0.15s;
 }
-.removeButton svg:hover {
-    color: var(--red-500);
+.editButton svg:hover {
+    color: var(--blue-500);
 
     transition: ease-out 0.15s;
 }
