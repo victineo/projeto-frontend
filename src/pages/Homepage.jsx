@@ -50,6 +50,17 @@ export function HomePage() {
     setTasks(updatedTasks);
     console.log(updatedTasks);
   };
+
+  const [isExpanded, setIsExpanded] = useState(false);
+  const handleToggleExpanded = () => {
+    setIsExpanded(!isExpanded); // true
+  }
+
+  const [selectedTask, setSelectedTask] = useState(null);
+  const handleSelectTask = (task) => {
+    setSelectedTask(task);
+  };
+
   return (
     <>
       <Aside />
@@ -63,6 +74,8 @@ export function HomePage() {
                 title={task.title}
                 description={task.description}
                 onToggleCompleted={() => handleToggleCompleted(task.id)}
+                onToggleExpanded={handleToggleExpanded}
+                onSelectTask={() => handleSelectTask(task)}
                 onDelete={() => handleDeleteTask(task.id)}
               />
             );
@@ -72,7 +85,18 @@ export function HomePage() {
           <Calendar />
         </div>
       </div>
-      <div className={styles.rightColumn}></div>
+      <div className={`${styles.rightColumn} ${isExpanded ? styles.rightColumnEntered : styles.rightColumnExited}`}>
+        <div className={styles.taskInfo}>
+          <div className={styles.taskTitle}>
+            <h2>Título</h2>
+            <strong>{selectedTask?.title}</strong>
+          </div>
+          <div className={styles.taskDescription}>
+            <h2>Descrição</h2>
+            {selectedTask?.description}
+          </div>
+        </div>
+      </div>
     </>
   );
 }
