@@ -26,18 +26,76 @@
     transition: width ease-out 0.15s;
 }
 .rightColumnEntered {
-    width: 50rem; /* 800px */
-    padding: 1rem;
+    width: 30rem; /* 800px */
 
     transition: width ease-out 0.15s;
+}
+
+.rightColumnWrapperExited {
+    width: 0px;
+
+    transition: width ease-out 0.15s;
+}
+.rightColumnWrapperEntered {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+
+    transition: width ease-out 0.15s;
+}
+.rightColumnWrapperEntered p {
+    font-size: 1rem;
+    text-align:start;
 }
 
 .taskInfo {
     display: flex;
     flex-direction: column;
+    background-color: var(--gray-700);
+    padding: 1rem;
+    border-radius: 8px;
+    gap: 1rem;
+}
+.taskInfo h3 {
+    font-size: 0.875rem;
+    font-weight: normal;
+    color: var(--gray-300);
+}
+.taskInfo p {
+    font-size: 1rem;
+    line-height: 1.2;
+    color: var(--white);
+}
+.taskAtribute {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.taskActions {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
-.taskTitle {
-    font-size: 1.5rem;
+.taskAction {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--gray-700);
+    color: var(--gray-300);
+    padding: 1rem;
+    border-radius: 8px;
+    gap: 1rem;
+}
+.taskActionIcon {
+    min-width: 1.5rem;
+    min-height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.taskAction p {
+    font-size: 1rem;
+    color: var(--gray-300);
 }

@@ -3,6 +3,7 @@ import { Aside } from "../components/Aside/Aside";
 import { Task } from "../components/Task/Task";
 import { NewTask } from "../components/NewTask/NewTask";
 import { Calendar } from "../components/Calendar/Calendar";
+import { CalendarBlank } from "phosphor-react";
 import styles from "./Homepage.module.css";
 
 export function HomePage() {
@@ -20,6 +21,8 @@ export function HomePage() {
       isCompleted: false,
     },
   ]);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [selectedTask, setSelectedTask] = useState(null);
 
   function handleCreateNewTask(task) {
     event.preventDefault();
@@ -51,13 +54,13 @@ export function HomePage() {
     console.log(updatedTasks);
   };
 
-  const [isExpanded, setIsExpanded] = useState(false);
-  const handleToggleExpanded = () => {
-    setIsExpanded(!isExpanded); // true
-  }
-
-  const [selectedTask, setSelectedTask] = useState(null);
   const handleSelectTask = (task) => {
+    if (selectedTask && selectedTask.id === task.id) {
+      setIsExpanded(!isExpanded);
+    } else {
+      setIsExpanded(true);
+      setSelectedTask(task);
+    }
     setSelectedTask(task);
   };
 
@@ -74,7 +77,7 @@ export function HomePage() {
                 title={task.title}
                 description={task.description}
                 onToggleCompleted={() => handleToggleCompleted(task.id)}
-                onToggleExpanded={handleToggleExpanded}
+                onToggleExpanded={() => handleSelectTask(task)}
                 onSelectTask={() => handleSelectTask(task)}
                 onDelete={() => handleDeleteTask(task.id)}
               />
@@ -86,16 +89,28 @@ export function HomePage() {
         </div>
       </div>
       <div className={`${styles.rightColumn} ${isExpanded ? styles.rightColumnEntered : styles.rightColumnExited}`}>
-        <div className={styles.taskInfo}>
-          <div className={styles.taskTitle}>
-            <h2>Título</h2>
-            <strong>{selectedTask?.title}</strong>
+        {isExpanded && (
+          <div className={`${isExpanded ? styles.rightColumnWrapperEntered : styles.rightColumnWrapperExited}`}>
+            <div className={styles.taskInfo}>
+              <div className={styles.taskAtribute}>
+                <h3>Título</h3>
+                <p>{selectedTask?.title}</p>
+              </div>
+              <div className={styles.taskAtribute}>
+                <h3>Descrição</h3>
+                <p>{selectedTask?.description}</p>
+              </div>
+            </div>
+            <div className={styles.taskActions}>
+              <div className={styles.taskAction}>
+                <div className={styles.taskActionIcon}>
+                  <CalendarBlank size={24} />
+                </div>
+                <p>Data</p>
+              </div>
+            </div>
           </div>
-          <div className={styles.taskDescription}>
-            <h2>Descrição</h2>
-            {selectedTask?.description}
-          </div>
-        </div>
+        )}
       </div>
     </>
   );
