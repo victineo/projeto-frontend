@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import styles from './Task.module.css'
-import { Circle, PencilCircle } from 'phosphor-react';
-import { CheckCircle } from 'phosphor-react';
-import { PencilSimple } from 'phosphor-react';
+import { Circle, CheckCircle, PencilSimple } from 'phosphor-react';
 
 export function Task({ title, description, onToggleCompleted, onToggleExpanded, onSelectTask, onDelete, isExpanded }) {
     const [isCompleted, setIsCompleted] = useState(false);
@@ -14,7 +12,7 @@ export function Task({ title, description, onToggleCompleted, onToggleExpanded, 
 
     return (
         <div className={`${styles.taskCard} ${isCompleted ? styles.completed : ''}`}>
-            <div className={`${styles.checkBox} ${isCompleted ? styles.checked : ''}`} onClick={handleCheckboxClick}>
+            <div className={`${styles.checkBox} ${isCompleted ? styles.checked : ''}`} onClick={handleCheckboxClick} title={isCompleted ? 'Marcar como não concluída' : 'Marcar como concluída'}>
                 {isCompleted ? <CheckCircle size={24} weight="fill" /> : <Circle size={24} />}
             </div>
             <div className={styles.taskInfo}>
@@ -25,7 +23,7 @@ export function Task({ title, description, onToggleCompleted, onToggleExpanded, 
                     {description}
                 </div>
             </div>
-            <div className={styles.editButton}>
+            <div className={styles.editButton} title="Editar tarefa">
                 <PencilSimple size={24} onClick={() => {
                     onToggleExpanded();
                     onSelectTask({ title, description });
