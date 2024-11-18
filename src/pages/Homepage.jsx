@@ -3,7 +3,7 @@ import { Aside } from "../components/Aside/Aside";
 import { Task } from "../components/Task/Task";
 import { NewTask } from "../components/NewTask/NewTask";
 import { Calendar } from "../components/Calendar/Calendar";
-import { CalendarBlank } from "phosphor-react";
+import { CalendarBlank, Trash } from "phosphor-react";
 import styles from "./Homepage.module.css";
 
 export function HomePage() {
@@ -91,22 +91,29 @@ export function HomePage() {
       <div className={`${styles.rightColumn} ${isExpanded ? styles.rightColumnEntered : styles.rightColumnExited}`}>
         {isExpanded && (
           <div className={`${isExpanded ? styles.rightColumnWrapperEntered : styles.rightColumnWrapperExited}`}>
-            <div className={styles.taskInfo}>
-              <div className={styles.taskAtribute}>
-                <h3>Título</h3>
-                <p>{selectedTask?.title}</p>
+            <div className={styles.rightColumnScrollableData}>
+              <div className={styles.taskInfo}>
+                <div className={styles.taskAtribute}>
+                  <h3>Título</h3>
+                  <p>{selectedTask?.title}</p>
+                </div>
+                <div className={styles.taskAtribute}>
+                  <h3>Descrição</h3>
+                  <p>{selectedTask?.description}</p>
+                </div>
               </div>
-              <div className={styles.taskAtribute}>
-                <h3>Descrição</h3>
-                <p>{selectedTask?.description}</p>
+              <div className={styles.taskActions}>
+                <div className={styles.taskAction}>
+                  <div className={styles.taskActionIcon}>
+                    <CalendarBlank size={24} />
+                  </div>
+                  <p>Data</p>
+                </div>
               </div>
             </div>
-            <div className={styles.taskActions}>
-              <div className={styles.taskAction}>
-                <div className={styles.taskActionIcon}>
-                  <CalendarBlank size={24} />
-                </div>
-                <p>Data</p>
+            <div className={styles.rightColumnFooter}>
+              <div className={styles.deleteButton} title="Excluir tarefa">
+                <Trash size={24} onClick={() => handleDeleteTask(selectedTask.id)} />
               </div>
             </div>
           </div>
