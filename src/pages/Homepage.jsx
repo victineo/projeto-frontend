@@ -24,6 +24,9 @@ export function HomePage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
 
+  const [selectedTaskTitle, setSelectedTaskTitle] = useState("");
+  const [selectedTaskDescription, setSelectedTaskDescription] = useState("");
+
   function handleCreateNewTask(task) {
     event.preventDefault();
     const newTask = {
@@ -60,8 +63,17 @@ export function HomePage() {
     } else {
       setIsExpanded(true);
       setSelectedTask(task);
+      setSelectedTaskTitle(task.title);
+      setSelectedTaskDescription(task.description);
     }
-    setSelectedTask(task);
+  };
+
+  const handleUpdateTask = (task) => {
+    const updatedTask = { ...task };
+    updatedTask.title = selectedTaskTitle;
+    updatedTask.description = selectedTaskDescription;
+    const updatedTasks = tasks.map((t) => (t.id === task.id ? updatedTask : t));
+    setTasks(updatedTasks);
   };
 
   return (
@@ -95,11 +107,25 @@ export function HomePage() {
               <div className={styles.taskInfo}>
                 <div className={styles.taskAtribute}>
                   <h3>Título</h3>
-                  <p>{selectedTask?.title}</p>
+                  <input
+                    type="text"
+                    value={selectedTaskTitle}
+                    onChange={(e) => {
+                      setSelectedTaskTitle(e.target.value);
+                      handleUpdateTask(selectedTask);
+                    }}
+                  />
                 </div>
                 <div className={styles.taskAtribute}>
                   <h3>Descrição</h3>
-                  <p>{selectedTask?.description}</p>
+                  <textarea
+                    placeholder="Insira uma descrição"
+                    value={selectedTaskDescription}
+                    onChange={(e) => {
+                      setSelectedTaskDescription(e.target.value);
+                      handleUpdateTask(selectedTask);
+                    }}
+                  />
                 </div>
               </div>
               <div className={styles.taskActions}>

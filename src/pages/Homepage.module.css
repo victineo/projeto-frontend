@@ -81,6 +81,32 @@
     gap: 0.25rem;
 }
 
+.taskAtribute input, textarea {
+    background-color: transparent;
+    color: var(--white);
+    border: 0;
+    border-radius: 4px;
+    outline: 0 solid var(--blue-500);
+    resize: none;
+
+    line-height: 1.6;
+
+    transition: ease-out 0.15s;
+}
+.taskAtribute input:hover, textarea:hover {
+    background-color: var(--gray-600);
+
+    transition: ease-out 0.15s;
+}
+.taskAtribute input:focus, textarea:focus {
+    outline: 1px solid var(--blue-500);
+
+    transition: ease-out 0.15s;
+}
+.taskAtribute input::placeholder, textarea::placeholder {
+    color: var(--gray-400);
+}
+
 .taskActions {
     display: flex;
     flex-direction: column;
