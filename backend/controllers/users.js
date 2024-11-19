@@ -1,3 +1,5 @@
+const usersModel = require("../models/users");
+
 const registerUser = async (req, res) => {
     const { username, name, email, password } = req.body;
 
@@ -30,6 +32,7 @@ const deleteUser = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 };
+
 
 module.exports = {
     registerUser,
