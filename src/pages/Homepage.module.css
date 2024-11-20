@@ -114,6 +114,20 @@
     flex-direction: column;
     gap: 1rem;
 }
+.taskAction input {
+    background-color: transparent;
+    color: var(--white);
+    border: 0;
+    border-radius: 4px;
+    outline: 0 solid var(--blue-500);
+
+    transition: ease-out 0.15s;
+}
+/*
+.taskAction input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+*/
 
 .taskAction {
     display: flex;

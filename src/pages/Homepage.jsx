@@ -133,7 +133,9 @@ export function HomePage() {
                   <div className={styles.taskActionIcon}>
                     <CalendarBlank size={24} />
                   </div>
-                  <p>Data</p>
+                  <input
+                    type="date"
+                  />
                 </div>
               </div>
             </div>
