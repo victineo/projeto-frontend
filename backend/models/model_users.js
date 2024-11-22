@@ -54,7 +54,6 @@ const addUser = async (user) => {
   return newUser;
 };
 
-
 const deleteUser = (username) => {
   let users = loadUsers();
   users = users.filter((user) => user.username !== username);
@@ -71,8 +70,6 @@ const authenticateUser = (email, password) => {
 
   return { email: user.email, nome: user.nome };
 };
-
-
 
 module.exports = {
   loadUsers,
