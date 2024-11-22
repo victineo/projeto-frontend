@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import styles from './NewTask.module.css';
-import { Plus } from 'phosphor-react'
+import axios from 'axios';
 
 export function NewTask({ onCreate }) {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
-    function handleCreateNewTask() {
+    async function handleCreateNewTask() {
         event.preventDefault();
-
-        const newTitleText = event.target[0].value;
-        const newDescriptionText = event.target[1].value;
-        if (title.trim()) {
-            onCreate({ title: newTitleText, description: newDescriptionText });
-            setTitle('');
-            setDescription('');
+        try {
+            const response = await axios.post('http://localhost:8000/api/tasks/add', {
+                title,
+                description,
+            });
+            console.log(response.data.message);
+        } catch (error) {
+            console.error(error.response ? error.response.data.message : 'Erro ao criar tarefa');
         }
     };
 
