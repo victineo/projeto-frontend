@@ -1,6 +1,5 @@
-import React from "react";
-import { Check } from "phosphor-react";
 import styles from "./Subscriptions.module.css";
+import { Check } from "phosphor-react";
 import { Header } from "../components/Header/Header"
 
 export function Subscriptions() {
