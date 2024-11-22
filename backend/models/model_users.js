@@ -34,6 +34,12 @@ const saveUsers = (users) => {
   fs.writeFileSync(dataPath, JSON.stringify(users, null, 2));
 };
 
+const generateUserId = (users) => {
+  const sortedUsers = [...users].sort((a, b) => a.id - b.id);
+  const id = sortedUsers.length > 0 ? users[users.length - 1].id + 1 : 1;
+  return id;
+};
+
 const addUser = async (user) => {
   const users = loadUsers();
   const userExists = users.find((u) => u.username === user.username);
@@ -42,10 +48,12 @@ const addUser = async (user) => {
   const hashedPassword = await bcrypt.hash(user.password, 10);
 
   const newUser = {
+    id: generateUserId(users),
     username: user.username,
-    nome: user.nome,
+    name: user.name,
     email: user.email,
-    password: hashedPassword
+    password: hashedPassword,
+    tasks: []
   };
 
   users.push(newUser);
@@ -68,7 +76,7 @@ const authenticateUser = (email, password) => {
   const isPasswordValid = bcrypt.compareSync(password, user.password);
   if (!isPasswordValid) throw new Error("Senha inválida");
 
-  return { email: user.email, nome: user.nome };
+  return { email: user.email, name: user.name };
 };
 
 module.exports = {
