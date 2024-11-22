@@ -5,19 +5,28 @@ import axios from 'axios';
 export function NewTask({ onCreate }) {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+    const [date, setDate] = useState('');
 
-    async function handleCreateNewTask() {
+    async function handleCreateNewTask(event) {
         event.preventDefault();
         try {
             const response = await axios.post('http://localhost:8000/api/tasks/add', {
                 title,
                 description,
+                date,
             });
-            console.log(response.data.message);
+            console.log('Tarefa criada com sucesso:', response.data.task);
+            onCreate(response.data.task); 
         } catch (error) {
-            console.error(error.response ? error.response.data.message : 'Erro ao criar tarefa');
+            console.error(
+                error.response
+                    ? `Erro do servidor: ${error.response.data.error}`
+                    : 'Erro desconhecido'
+            );
         }
-    };
+    }
+    
+    
 
     const autoResize = (e) => {
         e.target.style.height = 'auto';
@@ -28,7 +37,7 @@ export function NewTask({ onCreate }) {
         <form className={styles.newTaskForm} onSubmit={handleCreateNewTask}>
             <div className={styles.newTaskContent}>
                 <div className={styles.checkBox}>
-                    
+
                 </div>
                 <div className={styles.newTaskInfo}>
                     <input
@@ -47,6 +56,14 @@ export function NewTask({ onCreate }) {
                         onChange={(e) => setDescription(e.target.value)}
                         onInput={(e) => autoResize(e)}
                     />
+                    <input
+                        className={styles.newTaskDate}
+                        type="date"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                        required
+                    />
+
                 </div>
                 <button type="submit" disabled={title.trim() === ''}>Criar</button>
             </div>

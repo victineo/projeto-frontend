@@ -7,20 +7,7 @@ import { CalendarBlank, Trash } from "phosphor-react";
 import styles from "./Homepage.module.css";
 
 export function HomePage() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Estudar React",
-      description: "Estudar conceitos de componentes, hooks e props",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      title: "Criar um portfólio",
-      description: "Criar um portfólio com React",
-      isCompleted: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
 

@@ -15,16 +15,15 @@ const saveTasks = (tasks) => {
 
 const addTask = (task) => {
   const tasks = loadTasks();
-  
   const newTask = {
+    id: Date.now(),
     title: task.title,
     description: task.description,
-    date: task.date
+    date: task.date,
   };
-  
-  tasks.push(task);
+  tasks.push(newTask);
   saveTasks(tasks);
-  return task;
+  return newTask;
 };
 
 module.exports = { loadTasks, saveTasks, addTask };

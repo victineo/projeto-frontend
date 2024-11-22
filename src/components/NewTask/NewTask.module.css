@@ -110,3 +110,33 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+.newTaskDate {
+    color: var(--gray-200);
+    background-color: transparent;
+    border: 0;
+    border-radius: 4px;
+    outline: none;
+    line-height: 1.6;
+    padding: 0.5rem;
+    transition: ease-out 0.15s;
+}
+
+.newTaskDate:hover {
+    background-color: var(--gray-700);
+    transition: ease-out 0.15s;
+}
+
+.newTaskDate:focus {
+    background-color: var(--gray-700);
+    color: var(--gray-200);
+}
+
+.newTaskDate::placeholder {
+    color: var(--blue-700);
+    line-height: 1.6;
+}
+
+.newTaskDate:focus::placeholder {
+    color: var(--gray-200);
+}
