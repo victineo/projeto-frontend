@@ -21,6 +21,9 @@ export function Login() {
 
       console.log(response.data);
 
+      localStorage.setItem("isLogged", true);
+      localStorage.setItem("username", response.data.username );
+
       setSuccessMessage(response.data.message);
       setErrorMessage("");
       navigate("/");

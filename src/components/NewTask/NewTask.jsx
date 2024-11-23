@@ -16,13 +16,9 @@ export function NewTask({ onCreate }) {
                 date,
             });
             console.log('Tarefa criada com sucesso:', response.data.task);
-            onCreate(response.data.task); 
+            onCreate(response.data); 
         } catch (error) {
-            console.error(
-                error.response
-                    ? `Erro do servidor: ${error.response.data.error}`
-                    : 'Erro desconhecido'
-            );
+            console.error('Detalhes do erro:', error);
         }
     }
     

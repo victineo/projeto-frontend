@@ -1,18 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const dataPath = path.resolve(__dirname, "../data/tasks.json");
-const dirPath = path.dirname(dataPath);
-
-if (!fs.existsSync(dirPath)) {
-  console.log("Criando diretório...");
-  fs.mkdirSync(dirPath, { recursive: true });
-}
-
-if (!fs.existsSync(dataPath)) {
-  console.log("Criando arquivo...");
-  fs.writeFileSync(dataPath, "[]");
-}
+const dataPath = path.join(__dirname, "../data/tasks.json");
 
 const loadTasks = () => {
   const dirPath = path.dirname(dataPath);
