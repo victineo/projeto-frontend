@@ -1,5 +1,7 @@
-import { useState } from "react";
 import styles from "./Register.module.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ButtonBack } from "../ButtonBack/ButtonBack";
 import axios from "axios";
 
 export function Register() {
@@ -34,6 +36,7 @@ export function Register() {
   return (
     <div className={styles.container}>
       <form className={styles.registerForm} onSubmit={handleRegister}>
+        <ButtonBack />
         <h1 className={styles.formTitle}>Registro</h1>
 
         {errormessage && <p className={styles.errorMessage}>{errormessage}</p>}
@@ -77,7 +80,7 @@ export function Register() {
         </div>
         <button className={styles.signInButton} type="submit">Registrar-se</button>
         <div className={styles.loginLink}>
-          <p>Já possui uma conta? <a href="#">Faça login</a></p>
+          <p>Já possui uma conta? <Link to="/login">Faça login</Link></p>
         </div>
       </form>
     </div>
