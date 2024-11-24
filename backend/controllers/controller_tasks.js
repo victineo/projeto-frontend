@@ -4,9 +4,9 @@ const addTask = (req, res) => {
   const { title, description, date } = req.body;
   console.log('Requisição recebida:', req.body);
 
-  if (!title || !description || !date) {
+  if (!title) {
     console.error('Erro de validação: Campos obrigatórios faltando');
-    return res.status(400).json({ error: "Título, descrição e data são obrigatórios" });
+    return res.status(400).json({ error: "Título é obrigatório" });
   }
 
   try {
@@ -21,7 +21,7 @@ const addTask = (req, res) => {
 
 const getTasks = (req, res) => {
   try {
-    const tasks = tasksModel.loadTasks();
+    const tasks = tasksModel.loadTasks(req);
     res.status(200).json(tasks);
   } catch (error) {
     console.error('Erro ao carregar as tarefas:', error.message);
