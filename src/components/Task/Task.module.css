@@ -81,7 +81,5 @@
 }
 
 .taskDate {
-    margin-top: 8px;
-    font-size: 14px;
-    color: #555;
+    color: var(--gray-400);
 }
