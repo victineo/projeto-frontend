@@ -3,9 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;    
-    background-color: #121214;
-    color: #e1e1e6;
+    width: 100%;
 }
 
 .content {
