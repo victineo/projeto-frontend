@@ -14,6 +14,7 @@ export function HomePage() {
 
   const [selectedTaskTitle, setSelectedTaskTitle] = useState("");
   const [selectedTaskDescription, setSelectedTaskDescription] = useState("");
+  const [selectedTaskDate, setSelectedTaskDate] = useState("");
 
   const fetchTasks = async () => {
     try {
@@ -81,6 +82,7 @@ export function HomePage() {
         ...selectedTask,
         title: selectedTaskTitle,
         description: selectedTaskDescription,
+        date: selectedTaskDate
       };
 
       await axios.put(`http://localhost:8000/api/tasks/update/${selectedTask.id}`, updatedTask);
@@ -110,6 +112,7 @@ export function HomePage() {
               key={task.id}
               title={task.title}
               description={task.description}
+              date={task.date}
               isCompleted={task.isCompleted}
               onToggleCompleted={() => handleToggleCompleted(task.id)}
               onSelectTask={() => handleSelectTask(task)}
@@ -151,6 +154,19 @@ export function HomePage() {
                     placeholder="Insira uma descrição"
                     value={selectedTaskDescription}
                     onChange={(e) => setSelectedTaskDescription(e.target.value)}
+                    onBlur={handleUpdateTask}
+                  />
+                </div>
+              </div>
+              <div className={styles.taskActions}>
+                <div className={styles.taskAction}>
+                  <div className={styles.taskActionIcon}>
+                    <CalendarBlank size={24} />
+                  </div>
+                  <input
+                    type="date"
+                    value={selectedTaskDate}
+                    onChange={(e) => setSelectedTaskDate(e.target.value)}
                     onBlur={handleUpdateTask}
                   />
                 </div>
