@@ -1,28 +1,27 @@
-.aboutUs {
-    max-width: 50rem;  
-    margin: 0 auto;
-    padding: 1.25rem;  
-    font-family: Arial, sans-serif;
-    border-radius: 0.5rem;  
-    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);  
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 .contentHeader {
     color: var(--blue-600);
-    font-size: 2.5rem;  
+    width: 100%;
     text-align: center;
-    margin-bottom: 1.25rem; 
-    font-weight: 600;
 }
 
-p, li {
-    font-size: 1.2rem;  
-    line-height: 1.6;
-    color: var(--white);
-    text-align: justify;
-    margin-bottom: 1.25rem; 
-}
-
-p, li:last-child {
-    margin-bottom: 0;
+.title {
+    color: var(--blue-600);
+    width: fit-content;
 }
