@@ -33,9 +33,9 @@ const updateTask = (req, res) => {
   const { id } = req.params;
   const { title, description, date } = req.body;
 
-  if (!title || !description || !date) {
+  if (!title) {
     console.error('Erro de validação: Campos obrigatórios faltando');
-    return res.status(400).json({ error: "Título, descrição e data são obrigatórios" });
+    return res.status(400).json({ error: "Título é obrigatório" });
   }
 
   try {
@@ -46,7 +46,13 @@ const updateTask = (req, res) => {
       return res.status(404).json({ error: 'Tarefa não encontrada' });
     }
 
-    tasks[taskIndex] = { id: parseInt(id), title, description, date };
+    tasks[taskIndex] = {
+      ...tasks[taskIndex],
+      title,
+      description: description || tasks[taskIndex].description,
+      date: date || tasks[taskIndex].date,
+    };
+
     tasksModel.saveTasks(tasks);
     res.status(200).json({ message: 'Tarefa atualizada com sucesso', task: tasks[taskIndex] });
   } catch (error) {
