@@ -70,7 +70,7 @@ export function HomePage() {
   };
 
   const handleSelectTask = (task) => {
-    setIsExpanded(true);
+    setIsExpanded(!isExpanded);
     setSelectedTask(task);
     setSelectedTaskTitle(task.title);
     setSelectedTaskDescription(task.description);
