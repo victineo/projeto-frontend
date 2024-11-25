@@ -13,7 +13,7 @@ Express é um Framework para Node.js que facilita a criação de aplicações we
 ### Axios
 Axios é uma biblioteca de requisições HTTP para Node.js e navegadores que permite fazer requisições assíncronas de forma fácil e eficiente. Ela oferece uma interface intuitiva para fazer requisições HTTP, suporta promises, interceptors e cancelamento de requisições.
 
-> O Express **cria** as APIs e o servidor no backend, e o Axios **consome** essas APIs criadas pelo Express no frontend.
+> O Express **cria** as APIs e o servidor no backend, e o Axios **consome** essas APIs no frontend.
 
 ### JWT (jsonwebtoken)
 JWT é uma biblioteca de autenticação e autorização que utiliza tokens assinados digitalmente para garantir a segurança de requisições HTTP.
