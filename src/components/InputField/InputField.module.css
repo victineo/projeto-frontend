@@ -28,12 +28,14 @@
     background-color: var(--gray-700);
 }
 .inputField:hover {
-    border: 1px solid gray;
+    border: 1px solid var(--gray-400);
+
     transition: ease-out 0.15s;
 }
 .inputField:focus,
 .inputField:focus-visible {
-    outline: 2px auto white;
+    outline: 2px auto var(--white);
+
     transition: ease-out 0.15s;
 }
 
@@ -42,5 +44,5 @@
     left: 0.75rem;
     top: 50%;
     transform: translateY(-50%);
-    color: gray;
+    color: var(--gray-400);
 }

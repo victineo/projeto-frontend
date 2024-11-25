@@ -13,12 +13,12 @@
     outline: 1px solid var(--blue-700);
     gap: 1rem;
 
-    transition: outline ease-out 0.1s;
+    transition: ease-out 0.15s;
 }
 .newTaskForm:focus-within {
     outline: 2px solid var(--blue-700);
 
-    transition: outline ease-out 0.1s;
+    transition: ease-out 0.15s;
 }
 
 .newTaskContent {
@@ -118,6 +118,7 @@
     border-radius: 4px;
     outline: none;
     line-height: 1.6;
+    
     transition: ease-out 0.15s;
 }
 .newTaskDate::placeholder {

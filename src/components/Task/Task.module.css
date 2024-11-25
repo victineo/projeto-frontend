@@ -7,7 +7,7 @@
     width: 100%;
     border-radius: 8px;
     padding: 1rem;
-    border: 1px solid gray;
+    border: 1px solid var(--gray-400);
     gap: 1rem;
 
     background-color: transparent;
@@ -36,7 +36,7 @@
 .checkBox svg {
     cursor: pointer;
 
-    transition: color ease-out 0.15s;
+    transition: ease-out 0.15s;
 }
 .checkBox svg:hover {
     color: var(--blue-500);

@@ -3,7 +3,7 @@
     align-items: center;
     width: 100%;
     padding: 1rem 2rem;
-    background-color: #1f1f23;
+    background-color: var(--gray-800);
 }
 
 .logoContainer {
@@ -33,7 +33,7 @@ header div h1 {
 }
 
 .nav {
-    background-color: #1f1f23;
+    background-color: inherit;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
 }
@@ -58,11 +58,12 @@ header div h1 {
 
 .navLink {
     text-decoration: none;
-    color: inherit;
-    transition: color 0.15s ease;
-}
-
-.navLink:hover {
     color: var(--gray-100);
-    transition: color 0.15s ease;
+
+    transition: ease-out 0.15s;
+}
+.navLink:hover {
+    color: var(--white);
+
+    transition: ease-out 0.15s;
 }

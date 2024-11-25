@@ -1,5 +1,5 @@
 .navBar {
-    background-color: #1f1f23;
+    background-color: inherit;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
 }
@@ -24,13 +24,12 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color: inherit;
-
-    transition: color 0.15s ease;
-}
-
-.navLink:hover {
     color: var(--gray-100);
 
-    transition: color 0.15s ease;
+    transition: ease-out 0.15s;
+}
+.navLink:hover {
+    color: var(--white);
+
+    transition: ease-out 0.15s;
 }
