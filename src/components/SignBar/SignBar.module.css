@@ -1,20 +1,36 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+}
 .container a {
     width: 100%;
 }
 
 .signButton {
-    background-color: #1f1f23;
-    color: #ffffff;
+    background-color: var(--gray-700);
+    color: var(--white);
     border: none;
     font-size: 1rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
     
     width: 100%;
     height: fit-content;
-    padding: 0.75rem 1rem;
 }
 
 .signButton:hover {
-    background-color: #1e40af;
+    background-color: var(--blue-500);
+}
+
+.logoffButton {
+    background-color: var(--gray-700);
+    color: var(--white);
+    font-weight: bold;
+    width: fit-content;
+
+    transition: ease-out 0.15s;
+}
+.logoffButton:hover {
+    background-color: var(--blue-500);
 }
