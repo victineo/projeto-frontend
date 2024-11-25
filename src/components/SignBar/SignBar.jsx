@@ -27,7 +27,7 @@ export function SignBar() {
     <div className={styles.container}>
       {isLogged ? (
         <>
-          <p>Bem-vindo, {username}!</p>
+          <p>Bem-vindo!</p>
           <button className={styles.signButton} onClick={handleLogout}>Logout</button>
         </>
       ) : (
