@@ -1,6 +1,6 @@
 .wrapper {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -8,7 +8,7 @@
 .loginPage {
     display: flex;
     width: 100%;
-    height:fit-content;
+    height:100%;
     align-content: center;
     justify-content: center;
 }
