@@ -126,9 +126,6 @@ export function HomePage() {
             />
           ))}
         </div>
-        <div>
-          <Calendar />
-        </div>
       </div>
       <div
         className={`${styles.rightColumn} ${
