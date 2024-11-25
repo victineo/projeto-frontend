@@ -10,14 +10,11 @@ export function NewTask({ onCreate }) {
   async function handleCreateNewTask(event) {
     event.preventDefault();
 
-    const [ano, mes, dia] = date.split("-");
-    const formattedDate = `${dia}/${mes}/${ano}`;
-
     try {
       const response = await axios.post("http://localhost:8000/api/tasks/add", {
         title,
         description,
-        date: formattedDate,
+        date,
       });
       console.log("Tarefa criada com sucesso:", response.data.task);
       onCreate(response.data);
