@@ -45,7 +45,7 @@ const loginUser = async (req, res) => {
         const user = await usersModel.authenticateUser(email, password);
         res.status(200).json({
             message: "Login realizado com sucesso",
-            user,
+            user: { email: user.user.email, name: user.user.name }
         });
     } catch (error) {
         res.status(401).json({ error: error.message });

@@ -76,7 +76,7 @@ const authenticateUser = (email, password) => {
   const isPasswordValid = bcrypt.compareSync(password, user.password);
   if (!isPasswordValid) throw new Error("Senha inválida");
 
-  return { email: user.email, name: user.name };
+  return { user: { email: user.email, nome: user.username } };
 };
 
 module.exports = {

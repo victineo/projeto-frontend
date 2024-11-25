@@ -11,7 +11,7 @@ export function SignBar() {
     const loggedInStatus = localStorage.getItem("isLogged");
     const storedUsername = localStorage.getItem("username");
 
-    if(loggedInStatus === "true") {
+    if(loggedInStatus === "true" && storedUsername) {
       setIsLogged(true);
       setUsername(storedUsername);
     }

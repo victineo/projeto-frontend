@@ -15,15 +15,15 @@ export function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await axios.post("http://localhost:8000/api/users/login", { email, password });
-
+  
       console.log(response.data);
-
+  
       localStorage.setItem("isLogged", true);
-      localStorage.setItem("username", response.data.username );
-
+      localStorage.setItem("username", response.data.user.name);
+  
       setSuccessMessage(response.data.message);
       setErrorMessage("");
       navigate("/");
@@ -32,6 +32,7 @@ export function Login() {
       setSuccessMessage("");
     }
   };
+  
 
 
   return (

@@ -2,7 +2,6 @@ import styles from "./Aside.module.css";
 import { NavBar } from "../NavBar/NavBar.jsx";
 import Logo from "../../assets/check-fat-fill.svg";
 import { InputField } from "../InputField/InputField.jsx";
-import { ProgressBar } from "../ProgressBar/ProgressBar.jsx";
 import { MagnifyingGlass } from "phosphor-react";
 import { SignBar } from "../SignBar/SignBar.jsx"
 import { Link } from "react-router-dom";
@@ -25,7 +24,6 @@ export function Aside() {
         />
       </div>
       <NavBar orientation="vertical" />
-      <ProgressBar />
       <SignBar />
     </aside>
   );
