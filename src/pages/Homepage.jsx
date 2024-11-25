@@ -74,16 +74,22 @@ export function HomePage() {
     setSelectedTask(task);
     setSelectedTaskTitle(task.title);
     setSelectedTaskDescription(task.description);
+    setSelectedTaskDate(task.date);
   };
 
   async function handleUpdateTask() {
     try {
       const updatedTask = {
         ...selectedTask,
-        title: selectedTaskTitle,
-        description: selectedTaskDescription,
-        date: selectedTaskDate
+        title: selectedTaskTitle || selectedTask.title,
+        description: selectedTaskDescription || selectedTask.description,
+        date: selectedTaskDate || selectedTask.date
       };
+
+      if (!updatedTask.title) {
+        console.error("Erro ao atualizar tarefa: Título é obrigatório");
+        return;
+      }
 
       await axios.put(`http://localhost:8000/api/tasks/update/${selectedTask.id}`, updatedTask);
 
